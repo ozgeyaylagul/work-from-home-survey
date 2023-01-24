@@ -17,5 +17,17 @@ form.addEventListener('submit',e=>{
 
     // console.log(score);
     result.classList.remove('d-none');
-    result.querySelector('span').textContent = `${score}%`
+    let point=0;
+    const animation= setInterval(() => {
+        result.querySelector('span').textContent = `${point}%`
+        if(point == score)
+        {
+            clearInterval(animation);
+        }
+        else
+        {
+            point++;
+        }
+    }, 15 );
+
 })
